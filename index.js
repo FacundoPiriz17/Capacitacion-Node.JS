@@ -12,7 +12,7 @@ app.get("/usuarios", (request, response) => {
     response.json(users);
 });
 
-app.get("/usuarios/:id", (request,response) => {
+app.get("/usuarios/id", (request,response) => {
     const id = parseInt(request.params.id);
     const user = router.db.get("usuarios").find({id}).value();
     if(user){
@@ -49,7 +49,7 @@ app.put("/usuarios/:id", (request,response) => {
     }
 });
 
-app.delete("/usuarios/:id", (request,response) => {
+app.delete("/usuarios/id", (request,response) => {
     const id = parseInt(request.params.id);
     const existentUser = router.db.get("usuarios").find({id}).value();
     if(existentUser){
